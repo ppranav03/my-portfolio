@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
+/*
+  Site colors live here so you can change the whole vibe in one place.
+  --hero is the Hero's dark gray (used as bg-hero); the rest are for the white sections.
+  TODO: pick your own palette (try a warm accent like #f59e0b)
+*/
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a0a0a;
+  --muted: #52525b;
+  --accent: #7c3aed;
+  --hero: #2e2e2e;
 }
 
+/*
+  Tailwind v4 reads its theme from CSS instead of a tailwind.config file.
+  Each --color-* line creates utilities like bg-accent or text-muted,
+  and --font-sans makes Arvo the default font for `font-sans`.
+*/
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-hero: var(--hero);
+  --font-sans: var(--font-arvo), Georgia, serif;
 }
